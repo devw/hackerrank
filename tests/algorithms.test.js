@@ -13,9 +13,6 @@ describe("Problem Solving Algorithms", function () {
 
     it("should return the lowest type number of the most frequently sighted bird.", function () {
         expect(answers.migratoryBirds([1, 4, 4, 4, 5, 3])).to.eql(4);
-
-        expect(
-            answers.migratoryBirds([1, 2, 3, 4, 5, 4, 3, 2, 1, 3, 4])
-        ).to.eql(3);
+        expect(answers.migratoryBirds([2, 3, 4, 5, 4, 3, 2, 1, 3])).to.eql(3);
     });
 });
