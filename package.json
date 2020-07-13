@@ -9,13 +9,13 @@
   "author": "antonio pierro",
   "license": "UNLICENSED",
   "private": true,
-  "devDependencies": {
-    "webpack": "^1.13.2",
-    "webpack-dev-server": "^1.15.1"
-  },
+  "devDependencies": {},
   "dependencies": {
     "chai": "^4.2.0",
     "mocha": "^8.0.1",
-    "mocha-loader": "^5.1.0"
+    "mocha-loader": "^5.1.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
   }
 }
