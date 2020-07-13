@@ -10,7 +10,13 @@ module.exports = {
         filename: "tests.js",
     },
     module: {
-        loaders: [{ test: /\.test.js/, loader: "mocha-loader" }],
+        rules: [
+            {
+                test: /\.test.js/,
+                use: "mocha-loader",
+                exclude: /node_modules/,
+            },
+        ],
     },
     plugins: [new webpack.HotModuleReplacementPlugin()],
     devServer: {
