@@ -10,10 +10,12 @@
   "license": "UNLICENSED",
   "private": true,
   "devDependencies": {
-    "chai": "^3.5.0",
-    "mocha": "^2.0.1",
-    "mocha-loader": "^0.7.1",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.1"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.0.1",
+    "mocha-loader": "^5.1.0"
   }
 }
