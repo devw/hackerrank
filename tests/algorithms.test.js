@@ -15,4 +15,27 @@ describe("Problem Solving Algorithms", function () {
         expect(answers.migratoryBirds([1, 4, 4, 4, 5, 3])).to.eql(4);
         expect(answers.migratoryBirds([2, 3, 4, 5, 4, 3, 2, 1, 3])).to.eql(3);
     });
+
+    it("should return the minimum units of potion Dan needs to drink to jump all of the hurdles.", function () {
+        expect(answers.hurdleRace(4, [1, 6, 3, 5, 2])).to.eql(2);
+        expect(answers.hurdleRace(7, [2, 5, 4, 5, 2])).to.eql(0);
+    });
+
+    it("It should return an integer array where each element represents Alice's rank.", function () {
+        expect(
+            answers.climbingLeaderboard([10, 5, 4], [3, 5, 6, 6, 8])
+        ).to.eql([4, 2, 2, 2, 2]);
+        expect(
+            answers.climbingLeaderboard(
+                [100, 100, 50, 40, 40, 20, 10],
+                [5, 25, 50, 120]
+            )
+        ).to.eql([6, 4, 2, 1]);
+        expect(
+            answers.climbingLeaderboard(
+                [100, 90, 90, 80, 75, 60],
+                [50, 65, 77, 90, 102]
+            )
+        ).to.eql([6, 5, 4, 2, 1]);
+    });
 });
