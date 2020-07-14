@@ -35,4 +35,13 @@ module.exports = {
         const hs = word.split("").map((e) => h[e.charCodeAt(0) - 97]);
         return Math.max(...hs) * word.length;
     },
+
+    // https://www.hackerrank.com/challenges/utopian-tree/problem
+    utopianTree: function (n) {
+        return [...new Array(n)].reduce(
+            (a, _, i) => ((i + 1) % 2 === 0 ? (a += 1) : (a *= 2)),
+            1
+        );
+        return ~(~1 << (n >> 1)) << n % 2;
+    },
 };

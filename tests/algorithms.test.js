@@ -45,4 +45,10 @@ describe("Problem Solving Algorithms", function () {
             .map((e) => Number(e));
         expect(answers.designerPdfViewer(h, "zaba")).to.eql(28);
     });
+
+    it("should return the integer height of the tree after the input number of growth cycles.", function () {
+        expect(answers.utopianTree(4)).to.eql(7);
+        expect(answers.utopianTree(5)).to.eql(14);
+        expect(answers.utopianTree(0)).to.eql(1);
+    });
 });
