@@ -51,4 +51,13 @@ describe("Problem Solving Algorithms", function () {
         expect(answers.utopianTree(5)).to.eql(14);
         expect(answers.utopianTree(0)).to.eql(1);
     });
+
+    it("should return YES if class is cancelled, or NO otherwise", function () {
+        let threshhold = 3;
+        let arrivalTimes = [-1, -3, 4, 2];
+        expect(answers.angryProfessor(threshhold, arrivalTimes)).to.eql("YES");
+        threshhold = 2;
+        arrivalTimes = [0, -3, 4, 2];
+        expect(answers.angryProfessor(threshhold, arrivalTimes)).to.eql("NO");
+    });
 });

@@ -44,4 +44,9 @@ module.exports = {
         );
         return ~(~1 << (n >> 1)) << n % 2;
     },
+
+    // https://www.hackerrank.com/challenges/angry-professor/problem
+    angryProfessor: function (k, arrivalTimes) {
+        return arrivalTimes.filter((e) => e <= 0).length < k ? "YES" : "NO";
+    },
 };
