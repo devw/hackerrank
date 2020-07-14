@@ -29,4 +29,10 @@ module.exports = {
             if (i < 0) return 1;
         });
     },
+
+    // https://www.hackerrank.com/challenges/designer-pdf-viewer/problem
+    designerPdfViewer: function (h, word) {
+        const hs = word.split("").map((e) => h[e.charCodeAt(0) - 97]);
+        return Math.max(...hs) * word.length;
+    },
 };

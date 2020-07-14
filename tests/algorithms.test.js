@@ -38,4 +38,11 @@ describe("Problem Solving Algorithms", function () {
             )
         ).to.eql([6, 5, 4, 2, 1]);
     });
+
+    it("should return an integer representing the size of the highlighted area.", function () {
+        const h = "1 3 1 3 1 4 1 3 2 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 7"
+            .split(" ")
+            .map((e) => Number(e));
+        expect(answers.designerPdfViewer(h, "zaba")).to.eql(28);
+    });
 });
