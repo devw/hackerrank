@@ -60,4 +60,14 @@ describe("Problem Solving Algorithms", function () {
         arrivalTimes = [0, -3, 4, 2];
         expect(answers.angryProfessor(threshhold, arrivalTimes)).to.eql("NO");
     });
+
+    it("should return a string, either Yes or No.", function () {
+        let s = "hackerhappy";
+        let t = "hackerrank";
+        let k = 9;
+        expect(answers.appendAndDelete(s, t, k)).to.eql("Yes");
+        expect(answers.appendAndDelete("aba", "aba", 7)).to.eql("Yes");
+        expect(answers.appendAndDelete("ashley", "ash", 2)).to.eql("No");
+        expect(answers.appendAndDelete("abcd", "abcdert", 10)).to.eql("No");
+    });
 });
