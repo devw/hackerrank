@@ -41,8 +41,16 @@ module.exports = {
     // m: an integer, the number of sweets
     // s: an integer, the chair number to begin passing out sweets from
     saveThePrisoner: function (n, m, s) {
-        // 5 2 2 -> 3
-        if ((m + s - 1) % n === 0) return n;
-        return (m + s - 1) % n;
+        let w = m + s - 1;
+        return w % n === 0 ? n : w % n;
+    },
+
+    beautifulDays: function (i, j, k) {
+        const days = [...new Array(j + 1 - i)].map((_, c) => c + i);
+        const reversedNum = (n) =>
+            Number(n.toString().split("").reverse().join(""));
+        const bDays = days.filter((e) => (e - reversedNum(e)) % k === 0);
+
+        return bDays.length;
     },
 };

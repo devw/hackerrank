@@ -47,9 +47,11 @@ describe("Easy Problem Solving Algorithms", function () {
         expect(answers.saveThePrisoner(5, 2, 1)).to.eql(2);
         expect(answers.saveThePrisoner(5, 2, 2)).to.eql(3);
         expect(answers.saveThePrisoner(7, 19, 2)).to.eql(6);
-        expect(answers.saveThePrisoner(3, 7, 3)).to.eql(3);
-        expect(answers.saveThePrisoner(352926151, 380324688, 94730870)).to.eql(
-            122129406
-        );
+        expect(answers.saveThePrisoner(5, 5, 1)).to.eql(5);
+    });
+
+    it("It should return the number of beautiful days in the range.", function () {
+        expect(answers.beautifulDays(20, 23, 6)).to.eql(2);
+        expect(answers.beautifulDays(49860, 205494, 155635764)).to.eql(607);
     });
 });
