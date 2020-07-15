@@ -35,4 +35,14 @@ module.exports = {
     angryProfessor: function (k, arrivalTimes) {
         return arrivalTimes.filter((e) => e <= 0).length < k ? "YES" : "NO";
     },
+
+    // https://www.hackerrank.com/challenges/save-the-prisoner/problem
+    // n: an integer, the number of prisoners
+    // m: an integer, the number of sweets
+    // s: an integer, the chair number to begin passing out sweets from
+    saveThePrisoner: function (n, m, s) {
+        // 5 2 2 -> 3
+        if ((m + s - 1) % n === 0) return n;
+        return (m + s - 1) % n;
+    },
 };
