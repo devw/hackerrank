@@ -16,21 +16,6 @@ module.exports = {
         return Math.max(Math.max(...height) - k, 0);
     },
 
-    // https://www.hackerrank.com/challenges/climbing-the-leaderboard/problem
-    // medium
-    climbingLeaderboard: function (scores, alice) {
-        scores = [...new Set(scores)];
-        let i = scores.length - 1;
-
-        return alice.map((aScore) => {
-            while (i >= 0) {
-                if (aScore >= scores[i]) i--;
-                else return i + 2;
-            }
-            if (i < 0) return 1;
-        });
-    },
-
     // https://www.hackerrank.com/challenges/designer-pdf-viewer/problem
     designerPdfViewer: function (h, word) {
         const hs = word.split("").map((e) => h[e.charCodeAt(0) - 97]);
@@ -49,24 +34,5 @@ module.exports = {
     // https://www.hackerrank.com/challenges/angry-professor/problem
     angryProfessor: function (k, arrivalTimes) {
         return arrivalTimes.filter((e) => e <= 0).length < k ? "YES" : "NO";
-    },
-
-    // https://www.hackerrank.com/challenges/append-and-delete/problem
-    // medium
-    appendAndDelete: function (s, t, k) {
-        let commonLen = 0;
-        s.split("").some((e, i) => {
-            commonLen = i;
-            return e !== t[i];
-        });
-        let distinctLen = s.length + t.length - commonLen * 2;
-        if (distinctLen > k) {
-            return "No";
-        } else if (distinctLen % 2 === k % 2) {
-            return "Yes";
-        } else if (s.length + t.length < k) {
-            return "Yes";
-        }
-        return "No";
     },
 };

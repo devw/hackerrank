@@ -1,7 +1,7 @@
 const expect = require("chai").expect;
-const answers = require("../src/algorithms");
+const answers = require("../src/easy-algorithms");
 
-describe("Problem Solving Algorithms", function () {
+describe("Easy Problem Solving Algorithms", function () {
     it("should print the minimum number of pages in order to arrive at page p.", function () {
         expect(answers.pageCount(5, 4)).to.eql(0);
         expect(answers.pageCount(9, 8)).to.eql(0);
@@ -19,24 +19,6 @@ describe("Problem Solving Algorithms", function () {
     it("should return the minimum units of potion Dan needs to drink to jump all of the hurdles.", function () {
         expect(answers.hurdleRace(4, [1, 6, 3, 5, 2])).to.eql(2);
         expect(answers.hurdleRace(7, [2, 5, 4, 5, 2])).to.eql(0);
-    });
-
-    it("It should return an integer array where each element represents Alice's rank.", function () {
-        expect(
-            answers.climbingLeaderboard([10, 5, 4], [3, 5, 6, 6, 8])
-        ).to.eql([4, 2, 2, 2, 2]);
-        expect(
-            answers.climbingLeaderboard(
-                [100, 100, 50, 40, 40, 20, 10],
-                [5, 25, 50, 120]
-            )
-        ).to.eql([6, 4, 2, 1]);
-        expect(
-            answers.climbingLeaderboard(
-                [100, 90, 90, 80, 75, 60],
-                [50, 65, 77, 90, 102]
-            )
-        ).to.eql([6, 5, 4, 2, 1]);
     });
 
     it("should return an integer representing the size of the highlighted area.", function () {
@@ -59,15 +41,5 @@ describe("Problem Solving Algorithms", function () {
         threshhold = 2;
         arrivalTimes = [0, -3, 4, 2];
         expect(answers.angryProfessor(threshhold, arrivalTimes)).to.eql("NO");
-    });
-
-    it("should return a string, either Yes or No.", function () {
-        let s = "hackerhappy";
-        let t = "hackerrank";
-        let k = 9;
-        expect(answers.appendAndDelete(s, t, k)).to.eql("Yes");
-        expect(answers.appendAndDelete("aba", "aba", 7)).to.eql("Yes");
-        expect(answers.appendAndDelete("ashley", "ash", 2)).to.eql("No");
-        expect(answers.appendAndDelete("abcd", "abcdert", 10)).to.eql("No");
     });
 });
