@@ -1,7 +1,6 @@
 /* eslint-env node */
-
 const fs = require("fs");
-const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     entry: fs.readdirSync("./tests").map((s) => `./tests/${s}`),
@@ -9,6 +8,7 @@ module.exports = {
         path: __dirname,
         filename: "tests.js",
     },
+    mode: "development",
     module: {
         rules: [
             {
@@ -18,7 +18,12 @@ module.exports = {
             },
         ],
     },
-    plugins: [new webpack.HotModuleReplacementPlugin()],
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: "Output Management",
+            filename: "index.html",
+        }),
+    ],
     devServer: {
         hot: true,
         port: 8080,

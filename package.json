@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "test": "mocha tests/*"
+    "test": "mocha tests/*",
+    "build": "webpack tests/algorithms.test.js --output dist/bundle.js --mode production"
   },
   "author": "antonio pierro",
   "license": "UNLICENSED",
@@ -12,6 +13,7 @@
   "devDependencies": {},
   "dependencies": {
     "chai": "^4.2.0",
+    "html-webpack-plugin": "^4.3.0",
     "mocha": "^8.0.1",
     "mocha-loader": "^5.1.0",
     "webpack": "^4.43.0",
