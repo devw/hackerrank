@@ -45,4 +45,13 @@ module.exports = {
         a = aRotated(a, k);
         return queries.map((e) => a[e]);
     },
+
+    // https://www.hackerrank.com/challenges/jumping-on-the-clouds-revisited/problem
+    jumpingOnClouds: function (c, k) {
+        let energy = 100;
+        for (let i = 0; i < c.length; i = i + k) {
+            energy = energy - 1 - c[i] * 2;
+        }
+        return energy;
+    },
 };

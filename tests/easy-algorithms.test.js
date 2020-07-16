@@ -49,4 +49,8 @@ describe("Easy Problem Solving Algorithms", function () {
             queries = [0, 1, 2];
         expect(ans.circularArrayRotation(a, k, queries)).to.eql([2, 3, 1]);
     });
+
+    it("It should return an integer representing the energy level remaining after the game.", () => {
+        expect(ans.jumpingOnClouds([0, 0, 1, 0, 0, 1, 1, 0], 2)).to.eql(92);
+    });
 });
