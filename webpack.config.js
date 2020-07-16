@@ -2,6 +2,7 @@
 const fs = require("fs");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
     entry: fs.readdirSync("./tests").map((s) => `./tests/${s}`),
@@ -24,6 +25,10 @@ module.exports = {
             filename: "index.html",
         }),
     ],
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()],
+    },
     devServer: {
         hot: true,
         port: 8080,
