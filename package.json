@@ -5,7 +5,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "test": "mocha tests/*",
-    "build": "webpack tests/algorithms.test.js --output dist/bundle.js --mode production"
+    "build": "webpack --mode production"
   },
   "author": "antonio pierro",
   "license": "UNLICENSED",

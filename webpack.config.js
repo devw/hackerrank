@@ -1,14 +1,14 @@
 /* eslint-env node */
 const fs = require("fs");
+const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     entry: fs.readdirSync("./tests").map((s) => `./tests/${s}`),
     output: {
-        path: __dirname,
-        filename: "tests.js",
+        path: path.resolve(__dirname, "docs"),
+        filename: "bundle.js",
     },
-    mode: "development",
     module: {
         rules: [
             {
