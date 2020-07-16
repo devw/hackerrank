@@ -5,7 +5,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "test": "mocha tests/*",
-    "build": "webpack tests/algorithms.test.js --output dist/bundle.js --mode production"
+    "build": "webpack -p"
   },
   "author": "antonio pierro",
   "license": "UNLICENSED",
@@ -16,6 +16,7 @@
     "html-webpack-plugin": "^4.3.0",
     "mocha": "^8.0.1",
     "mocha-loader": "^5.1.0",
+    "terser-webpack-plugin": "^3.0.6",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
