@@ -35,4 +35,14 @@ module.exports = {
     angryProfessor: function (k, arrivalTimes) {
         return arrivalTimes.filter((e) => e <= 0).length < k ? "YES" : "NO";
     },
+
+    // https://www.hackerrank.com/challenges/circular-array-rotation/problem
+    circularArrayRotation: function (a, k, queries) {
+        const aRotated = (a, k) => {
+            k = k % a.length;
+            return k === 0 ? a : a.slice(-k).concat(a.slice(0, a.length - k));
+        };
+        a = aRotated(a, k);
+        return queries.map((e) => a[e]);
+    },
 };
