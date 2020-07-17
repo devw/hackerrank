@@ -6,7 +6,7 @@ module.exports = {
 
     // https://www.hackerrank.com/challenges/migratory-birds/problem
     migratoryBirds: function (arr) {
-        let counter = [0, 0, 0, 0, 0, 0];
+        const counter = new Array(6).fill(0);
         arr.forEach((e) => counter[e]++);
         return counter.indexOf(Math.max(...counter));
     },
@@ -53,5 +53,12 @@ module.exports = {
             energy = energy - 1 - c[i] * 2;
         }
         return energy;
+    },
+
+    // https://www.hackerrank.com/challenges/library-fine/problem
+    libraryFine: function (d1, m1, y1, d2, m2, y2) {
+        const fees = [(d1 - d2) * 15, (m1 - m2) * 500, (y1 - y2) * 10000];
+        const sum = fees.reduce((a, c) => a + c, 0);
+        return sum <= 0 ? 0 : Math.max(...fees);
     },
 };

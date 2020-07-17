@@ -53,4 +53,10 @@ describe("Easy Problem Solving Algorithms", function () {
     it("It should return an integer representing the energy level remaining after the game.", () => {
         expect(ans.jumpingOnClouds([0, 0, 1, 0, 0, 1, 1, 0], 2)).to.eql(92);
     });
+
+    it("It should an integer representing the fine due.", () => {
+        expect(ans.libraryFine(9, 6, 2015, 6, 6, 2015)).to.eql(45);
+        expect(ans.libraryFine(2, 7, 1014, 1, 1, 1015)).to.eql(0);
+        expect(ans.libraryFine(5, 5, 2014, 23, 2, 2014)).to.eql(1500);
+    });
 });
