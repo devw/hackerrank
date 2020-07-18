@@ -24,8 +24,8 @@ module.exports = {
 
     // https://www.hackerrank.com/challenges/utopian-tree/problem
     utopianTree: function (n) {
-        return [...new Array(n)].reduce(
-            (a, _, i) => ((i + 1) % 2 === 0 ? (a += 1) : (a *= 2)),
+        return [...Array(n).keys()].reduce(
+            (a, c) => (c & 1 ? (a += 1) : (a *= 2)),
             1
         );
         return ~(~1 << (n >> 1)) << n % 2;
@@ -38,21 +38,14 @@ module.exports = {
 
     // https://www.hackerrank.com/challenges/circular-array-rotation/problem
     circularArrayRotation: function (a, k, queries) {
-        const aRotated = (a, k) => {
-            k = k % a.length;
-            return k === 0 ? a : a.slice(-k).concat(a.slice(0, a.length - k));
-        };
-        a = aRotated(a, k);
+        k = k % a.length;
+        if (k > 0) a = [...a.splice(a.length - k), ...a];
         return queries.map((e) => a[e]);
     },
 
     // https://www.hackerrank.com/challenges/jumping-on-the-clouds-revisited/problem
-    jumpingOnClouds: function (c, k) {
-        let energy = 100;
-        for (let i = 0; i < c.length; i = i + k) {
-            energy = energy - 1 - c[i] * 2;
-        }
-        return energy;
+    jumpingOnClouds: function (clouds, k) {
+        return clouds.reduce((a, c, i) => (i % k ? a : a - c * 2 - 1), 100);
     },
 
     // https://www.hackerrank.com/challenges/library-fine/problem
@@ -77,5 +70,10 @@ module.exports = {
             .filter((e) => e !== "0" && n % Number(e) === 0);
 
         return digits.length;
+    },
+
+    // https://www.hackerrank.com/challenges/permutation-equation/problem
+    permutationEquation: function (p) {
+        return p.map((_, i) => p.indexOf(p.indexOf(i + 1) + 1) + 1);
     },
 };

@@ -68,4 +68,11 @@ describe("Easy Problem Solving Algorithms", function () {
     it("It should return an integer representing the number of digits that are divisors of n.", () => {
         expect(ans.findDigits(1012)).to.eql(3);
     });
+
+    it("It should return an array of integers that represent the values y.", () => {
+        expect(ans.permutationEquation([2, 3, 1])).to.eql([2, 3, 1]);
+        let input = [4, 3, 5, 1, 2];
+        let output = [1, 3, 5, 4, 2];
+        expect(ans.permutationEquation(input)).to.eql(output);
+    });
 });
