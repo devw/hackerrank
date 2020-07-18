@@ -61,4 +61,21 @@ module.exports = {
         const sum = fees.reduce((a, c) => a + c, 0);
         return sum <= 0 ? 0 : Math.max(...fees);
     },
+
+    // https://www.hackerrank.com/challenges/extra-long-factorials/problem
+    extraLongFactorials: function (n) {
+        let result = BigInt(1);
+        for (let i = BigInt(1); i <= n; i++) result = result * i;
+        return result.toString();
+    },
+
+    // https://www.hackerrank.com/challenges/find-digits/problem
+    findDigits: function (n) {
+        const digits = n
+            .toString()
+            .split("")
+            .filter((e) => e !== "0" && n % Number(e) === 0);
+
+        return digits.length;
+    },
 };

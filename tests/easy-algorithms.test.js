@@ -59,4 +59,13 @@ describe("Easy Problem Solving Algorithms", function () {
         expect(ans.libraryFine(2, 7, 1014, 1, 1, 1015)).to.eql(0);
         expect(ans.libraryFine(5, 5, 2014, 23, 2, 2014)).to.eql(1500);
     });
+
+    it("It should", () => {
+        expect(ans.extraLongFactorials(4)).to.eql("24");
+        expect(ans.extraLongFactorials(7)).to.eql("5040");
+    });
+
+    it("It should return an integer representing the number of digits that are divisors of n.", () => {
+        expect(ans.findDigits(1012)).to.eql(3);
+    });
 });
