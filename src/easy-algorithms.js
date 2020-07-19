@@ -76,4 +76,37 @@ module.exports = {
     permutationEquation: function (p) {
         return p.map((_, i) => p.indexOf(p.indexOf(i + 1) + 1) + 1);
     },
+
+    // https://www.hackerrank.com/challenges/jumping-on-the-clouds/problem
+    // [ 0, 0, 0, 0, 1, 0 ] -> 3
+    jumpingOnClouds2: function (c) {
+        let result = 0;
+        for (let i = 0; i < c.length - 1; i += 2) {
+            if (c[i] === 1) i--;
+            result++;
+        }
+        return result;
+        // return a.reduce((a, _, i) => (i % 2 ? a : a + 1), 0);
+    },
+
+    repeatedString: function (s, n) {
+        const sLen = s.length;
+        const aInS = s.split("a").length - 1;
+        const aInR = s.slice(0, n % sLen).split("a").length - 1;
+
+        return aInR + Math.round(n / sLen) * aInS;
+    },
+
+    cutTheSticks: function (arr) {
+        const sortUniqArr = [...new Set(arr)].sort((a, b) => a - b);
+        let res = sortUniqArr.map((u) => arr.filter((e) => e - u > 0).length);
+        res.splice(-1, 1);
+        return [arr.length, ...res];
+    },
+
+    // https://www.hackerrank.com/challenges/minimum-distances/problem
+    minimumDistances: function (a) {
+        let res = a.reduce((ac, c, i) => ac.concat(i - a.indexOf(c) || []), []);
+        return res.length > 0 ? Math.min(...res) : -1;
+    },
 };

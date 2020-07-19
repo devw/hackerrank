@@ -75,4 +75,30 @@ describe("Easy Problem Solving Algorithms", function () {
         let output = [1, 3, 5, 4, 2];
         expect(ans.permutationEquation(input)).to.eql(output);
     });
+
+    it("It should return the minimum number of jumps required, as an integer.", () => {
+        expect(ans.jumpingOnClouds2([0, 0, 0, 0, 1, 0])).to.eql(3);
+        expect(ans.jumpingOnClouds2([0, 0, 1, 0, 0, 1, 0])).to.eql(4);
+        expect(ans.jumpingOnClouds2([0, 0, 1, 0, 0, 0, 0, 1, 0, 0])).to.eql(6);
+    });
+
+    it("It should return an integer representing the number of occurrences of a in the prefix of length n in the infinitely repeating string.", () => {
+        expect(ans.repeatedString("aba", 10)).to.eql(7);
+        expect(ans.repeatedString("a", 1000000000000)).to.eql(1000000000000);
+        expect(ans.repeatedString("ceebbcb", 817723)).to.eql(0);
+        expect(ans.repeatedString("gfcaaaecbg", 547602)).to.eql(164280);
+    });
+
+    it("It should return an array of integers representing the number of sticks before each cut operation is performed.", () => {
+        expect(ans.cutTheSticks([1, 2, 3, 4, 3, 3, 2, 1])).to.eql([8, 6, 4, 1]);
+        let input = [1, 13, 3, 8, 14, 9, 4, 4];
+        let output = [8, 7, 6, 4, 3, 2, 1];
+        expect(ans.cutTheSticks(input)).to.eql(output);
+    });
+
+    it("", () => {
+        expect(ans.minimumDistances([7, 1, 3, 4, 1, 7])).to.eql(3);
+        expect(ans.minimumDistances([1, 2, 3])).to.eql(-1);
+        expect(ans.minimumDistances([1, 2, 1, 3, 4, 5, 2, 9, 1])).to.eql(2);
+    });
 });
