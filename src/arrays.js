@@ -9,4 +9,16 @@ module.exports = {
         }
         return res;
     },
+
+    minimumSwaps: function (arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            while (arr[i] != i + 1) {
+                let j = arr[i] - 1;
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+                count++;
+            }
+        }
+        return count;
+    },
 };
