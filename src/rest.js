@@ -4,6 +4,7 @@ const axios = require("axios");
 module.exports = {
     //https://www.hackerrank.com/challenges/new-year-chaos/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=arrays
     getTotalGoals: function (team, year) {
+        //TODO Improve
         const prefix = "https://jsonmock.hackerrank.com/api/football_matches";
         urls = [
             `${prefix}?year=${year}&team1=${team}&page=1`,
@@ -16,12 +17,16 @@ module.exports = {
         };
 
         return axios.all(promises).then((results) => {
-            let temp = results.map((r, i) => getGoals(r.data.data, i));
-            return temp.reduce((a, c) => a + c, 0);
+            let goals = results.map((r, i) => getGoals(r.data.data, i));
+            return goals.reduce((a, c) => a + c, 0);
         });
     },
 
-    getWinnerTotalGoals: function (competition, year) {},
+    getWinnerTotalGoals: function (competition, year) {
+        const url = `https://jsonmock.hackerrank.com/api/football_competitions?name=${competition}&year=${year}`;
+        console.log(url);
+        return new Promise((res, rej) => res(28));
+    },
 
     delay: function (time) {
         return new Promise((resolve, reject) => {
@@ -33,9 +38,9 @@ module.exports = {
         });
     },
 
-    async: function (value) {
+    async: function (num) {
         return new Promise(function (resolve) {
-            setTimeout(() => resolve(value), 0);
+            setTimeout(() => resolve(num), num);
         });
     },
 };
