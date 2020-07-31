@@ -4,13 +4,12 @@ module.exports = {
     climbingLeaderboard: function (scores, alice) {
         scores = [...new Set(scores)];
         let i = scores.length - 1;
-
         return alice.map((aScore) => {
             while (i >= 0) {
                 if (aScore >= scores[i]) i--;
                 else return i + 2;
             }
-            if (i < 0) return 1;
+            return 1;
         });
     },
 
@@ -22,14 +21,9 @@ module.exports = {
             commonLen = i;
             return e !== t[i];
         });
-        let distinctLen = s.length + t.length - commonLen * 2;
-        if (distinctLen > k) {
-            return "No";
-        } else if (distinctLen % 2 === k % 2) {
-            return "Yes";
-        } else if (s.length + t.length < k) {
-            return "Yes";
-        }
+        let distinctLen = s.length + t.length - 2 * commonLen;
+        if (k < distinctLen) return "No";
+        if ((distinctLen - k) % 2 == 0 || k > s.length + t.length) return "Yes";
         return "No";
     },
 };
