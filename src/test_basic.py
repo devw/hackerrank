@@ -23,8 +23,10 @@ class TestReverseWords(unittest.TestCase):
         self.assertEqual(basic.reverse_words_order_and_swap_cases("aWESOME is cODING"), "Coding IS Awesome")
     
     def test_car_object(self):
-        car = basic.Car(151, "km/h")
-        # self.assertEqual(car, "car 151 km/h")
+        self.assertEqual(basic.Car(251, "km/h"), "Car with the maximum speed of 251 km/h")
+    
+    def test_boat_object(self):
+        self.assertEqual(basic.Boat(101), "Boat with the maximum speed of 101 knots")
 
 if __name__ == '__main__':
     unittest.main()

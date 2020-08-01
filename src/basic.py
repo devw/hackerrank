@@ -9,13 +9,13 @@ class Car:
     def __init__(self, speed, unitSpeed):
         self.speed = speed
         self.unitSpeed = unitSpeed
-    def __new__(cls):
-        return " ".join(["car", self.speed, self.unitSpeed])
+    def __new__(cls, speed, unitSpeed):
+        return f"Car with the maximum speed of {speed} {unitSpeed}"
 
 class Boat:
     # The constructor for Boat must take a single argument denoting its maximum speed in knots.
     # The class must be implemented to return a string based on the argument. For example, if boat is an object of class Boat with a maximum speed of 82, then printing boat prints the following string: "Boat with the maximum speed of 82 knots", without quotes.
     def __init__(self, speed):
         self.speed = speed
-    def __new__(cls):
-        return " ".join(["car", self.speed])
+    def __new__(cls, speed):
+        return f"Boat with the maximum speed of {speed} knots"
