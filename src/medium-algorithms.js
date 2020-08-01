@@ -16,14 +16,14 @@ module.exports = {
     // https://www.hackerrank.com/challenges/append-and-delete/problem
     // medium
     appendAndDelete: function (s, t, k) {
-        let commonLen = 0;
+        let equalLen = 0;
         s.split("").some((e, i) => {
-            commonLen = i;
+            equalLen = i;
             return e !== t[i];
         });
-        let distinctLen = s.length + t.length - 2 * commonLen;
-        if (k < distinctLen) return "No";
-        if ((distinctLen - k) % 2 == 0 || k > s.length + t.length) return "Yes";
+        let distinct = s.length + t.length - equalLen * 2;
+        if (k < distinct) return "No";
+        if ((distinct - k) % 2 == 0 || k > s.length + t.length) return "Yes";
         return "No";
     },
 };
