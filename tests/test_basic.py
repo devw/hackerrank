@@ -1,4 +1,4 @@
-import basic
+from src import basic
 import unittest
 
 class TestReverseWords(unittest.TestCase):
@@ -47,6 +47,3 @@ class TestReverseWords(unittest.TestCase):
             return result
         res = performOperations(['query 1', 'add 1', 'query 1', 'remove 1','query 1', 'add 2', 'add 2', 'size', 'query 2', 'remove 2', 'query 2', 'size'])
         self.assertEqual(res, [False, True, False, 2, True, True, 1]) 
-
-if __name__ == '__main__':
-    unittest.main()
