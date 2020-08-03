@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "test": "mocha tests/*",
+    "test": "mocha tests/*.js; python3 -m unittest -v",
     "build": "webpack -p"
   },
   "author": "antonio pierro",
