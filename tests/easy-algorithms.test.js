@@ -3,12 +3,11 @@ const ans = require("../src/easy-algorithms");
 
 describe("Easy Problem Solving Algorithms", function () {
     it("It should print the minimum number of pages in order to arrive at page p.", () => {
-        expect(ans.pageCount(5, 4)).to.eql(0);
         expect(ans.pageCount(9, 8)).to.eql(0);
         expect(ans.pageCount(9, 9)).to.eql(0);
-        expect(ans.pageCount(1, 1)).to.eql(0);
-        expect(ans.pageCount(6, 2)).to.eql(1);
-        expect(ans.pageCount(8, 7)).to.eql(1);
+        expect(ans.pageCount(9, 1)).to.eql(0);
+        expect(ans.pageCount(9, 2)).to.eql(1);
+        expect(ans.pageCount(9, 3)).to.eql(1);
     });
 
     it("It should return the lowest type number of the most frequently sighted bird.", () => {
@@ -82,7 +81,7 @@ describe("Easy Problem Solving Algorithms", function () {
         expect(ans.jumpingOnClouds2([0, 0, 1, 0, 0, 0, 0, 1, 0, 0])).to.eql(6);
     });
 
-    it("It should return an integer representing the number of occurrences of a in the prefix of length n in the infinitely repeating string.", () => {
+    it("It should return an integer representing the number of occurrences of 'a' in the prefix of length n in the infinitely repeating string.", () => {
         expect(ans.repeatedString("aba", 10)).to.eql(7);
         expect(ans.repeatedString("a", 1000000000000)).to.eql(1000000000000);
         expect(ans.repeatedString("ceebbcb", 817723)).to.eql(0);

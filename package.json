@@ -12,6 +12,7 @@
   "private": true,
   "devDependencies": {},
   "dependencies": {
+    "axios": "^0.19.2",
     "chai": "^4.2.0",
     "html-webpack-plugin": "^4.3.0",
     "mocha": "^8.0.1",
