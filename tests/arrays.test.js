@@ -21,4 +21,7 @@ describe("Practice > Interview Preparation Kit > Arrays problems", function () {
             .map((e) => Number(e));
         expect(ans.minimumSwaps(input)).to.eql(46);
     });
+    it("It should return the resulting array of integers.", () => {
+        expect(ans.rotLeft([1, 2, 3, 4, 5], 4)).to.eql([5, 1, 2, 3, 4]);
+    });
 });

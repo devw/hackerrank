@@ -21,4 +21,8 @@ module.exports = {
         }
         return count;
     },
+    rotLeft: function (a, d) {
+        const i = d % a.length;
+        return [...a.slice(i), ...a.slice(0, i)];
+    },
 };
