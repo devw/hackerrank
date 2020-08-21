@@ -9,5 +9,6 @@ describe("Medium Problem Solving Algorithms", function () {
         expect(answers.maxSubsetSum([8, -3, 3, -4, 5])).to.eql(16);
         expect(answers.maxSubsetSum([8006, -3505, 3, -4, 5])).to.eql(8014);
         expect(answers.maxSubsetSum([8006, -3505, -3, -4, -5])).to.eql(8006);
+        expect(answers.maxSubsetSum([6, -8, 3, 5, -5, -3])).to.eql(11);
     });
 });
