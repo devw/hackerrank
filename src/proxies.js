@@ -1,15 +1,25 @@
 module.exports = {
     // Proxies in JavaScript (ES6).mp4
-    handler: {
+    onGet: {
         get: (target, key) => (key in target ? target[key] : 0),
     },
-    validator: {
+    onSet: {
         set: (obj, prop, value) => {
             if (prop === "age" && isNaN(value)) {
                 return "Age must be a valid number";
             }
             obj[prop] = value;
             return true;
+        },
+    },
+    onDelete: {
+        deleteProperty: (target, prop) => {
+            if (prop in target) {
+                delete target[prop];
+                return true;
+            } else {
+                return false;
+            }
         },
     },
 };
