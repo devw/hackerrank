@@ -17,9 +17,8 @@ module.exports = {
             if (prop in target) {
                 delete target[prop];
                 return true;
-            } else {
-                return false;
             }
+            return false;
         },
     },
 };
